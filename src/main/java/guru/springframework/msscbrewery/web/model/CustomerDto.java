@@ -7,15 +7,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class BeerDto {
+public class CustomerDto {
 
     private UUID id;
-    private String beerName;
-    private String beerStyle;
-    private long upc;
-
+    private String customerName;
 }
