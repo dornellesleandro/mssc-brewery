@@ -15,11 +15,7 @@ public class BeerDto {
 
     private UUID id;
     private String beerName;
-    private BeerStyleEnum beerStyle;
+    private String beerStyle;
     private long upc;
 
-
-    public static enum BeerStyleEnum{
-        PILSNER, LAGER, WEISS, IPA, APA, STOUT
-    }
 }

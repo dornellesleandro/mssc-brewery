@@ -1,6 +1,7 @@
-package guru.springframework.msscbrewery.service;
+package guru.springframework.msscbrewery.service.v2;
 
-import guru.springframework.msscbrewery.web.model.BeerDto;
+import guru.springframework.msscbrewery.web.model.v2.BeerDtoV2;
+import guru.springframework.msscbrewery.web.model.v2.BeerStyleEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -11,19 +12,19 @@ import java.util.UUID;
  */
 @Slf4j
 @Service
-public class BeerServiceImpl implements BeerService {
+public class BeerServiceImplV2 implements BeerServiceV2 {
     @Override
-    public BeerDto getBeerById(UUID beerId) {
-        return BeerDto.builder().id(beerId)
+    public BeerDtoV2 getBeerById(UUID beerId) {
+        return BeerDtoV2.builder().id(beerId)
                 .beerName("Blauzent Beer")
-                .beerStyle("LAGER")
+                .beerStyle(BeerStyleEnum.LAGER)
                 .upc(7)
                 .build();
     }
 
     @Override
-    public BeerDto addNewBeer(BeerDto beerDto) {
-        return BeerDto.builder()
+    public BeerDtoV2 addNewBeer(BeerDtoV2 beerDto) {
+        return BeerDtoV2.builder()
                 .id(beerDto.getId())
                 .upc(beerDto.getUpc())
                 .beerName(beerDto.getBeerName())
@@ -32,7 +33,7 @@ public class BeerServiceImpl implements BeerService {
     }
 
     @Override
-    public void updateById(UUID beerId, BeerDto beerDto) {
+    public void updateById(UUID beerId, BeerDtoV2 beerDto) {
         log.debug("Updating a beer...");
         //todo add business logic here
     }
